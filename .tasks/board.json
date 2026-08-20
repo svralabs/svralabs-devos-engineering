@@ -1,0 +1,243 @@
+{
+  "project_name": "svralabs-devos-engineering",
+  "architecture_summary": "React Vite Tailwind app. Core: Vite for build, React for UI, Tailwind for styling. Pages: Home, Dashboard, Projects, Tasks, Reports, Settings. Components: reusable UI (cards, tables, modals, forms). State: local React state + context for global (auth, theme). Routing: React Router. API: fetch wrapper with error handling. Auth: JWT in httpOnly cookie. Dark mode: Tailwind class toggle. Responsive: mobile-first Tailwind.",
+  "tickets": [
+    {
+      "id": "TASK-001",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Scaffold Vite React Tailwind project",
+      "description": "Initialize Vite React project with Tailwind. Remove default Vite template files. Keep only index.html, src/App.jsx, src/main.jsx. Configure Tailwind for dark mode, mobile-first. Set up base Tailwind config (colors, fonts, spacing).",
+      "target_files": [
+        "package.json",
+        "vite.config.js",
+        "tailwind.config.js",
+        "postcss.config.js",
+        "src/main.jsx"
+      ],
+      "acceptance_criteria": [
+        "Project builds without errors",
+        "Tailwind classes apply correctly",
+        "Dark mode toggle works via class",
+        "Mobile-first responsive styles apply"
+      ],
+      "status": "TODO"
+    },
+    {
+      "id": "TASK-002",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Create Home page (src/pages/Home.jsx)",
+      "description": "Build Home page matching Stitch UI. Components: hero banner, quick actions cards, recent projects list, call-to-action buttons. Use Tailwind for styling. Mock data for now. Ensure responsive layout.",
+      "target_files": [
+        "src/pages/Home.jsx",
+        "src/assets/images/hero-bg.jpg"
+      ],
+      "acceptance_criteria": [
+        "Page matches Stitch UI design",
+        "All components render without errors",
+        "Responsive layout works on mobile/desktop",
+        "Mock data displays correctly"
+      ],
+      "status": "TODO"
+    },
+    {
+      "id": "TASK-003",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Create Dashboard page (src/pages/Dashboard.jsx)",
+      "description": "Build Dashboard page. Components: stats cards, project overview table, task progress chart (mock), recent activity feed. Use Tailwind for styling. Mock data for chart/table. Ensure responsive.",
+      "target_files": [
+        "src/pages/Dashboard.jsx"
+      ],
+      "acceptance_criteria": [
+        "Page matches Stitch UI design",
+        "Chart/table render without errors",
+        "Responsive layout works",
+        "Mock data displays correctly"
+      ],
+      "status": "TODO"
+    },
+    {
+      "id": "TASK-004",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Create Projects page (src/pages/Projects.jsx)",
+      "description": "Build Projects page. Components: project list table (sortable), create project modal, project cards grid. Use Tailwind for styling. Mock data for projects. Modal form validation (required fields).",
+      "target_files": [
+        "src/pages/Projects.jsx"
+      ],
+      "acceptance_criteria": [
+        "Page matches Stitch UI design",
+        "Table sorting works",
+        "Modal opens/closes correctly",
+        "Form validation prevents empty submissions"
+      ],
+      "status": "TODO"
+    },
+    {
+      "id": "TASK-005",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Create Tasks page (src/pages/Tasks.jsx)",
+      "description": "Build Tasks page. Components: task list table (filterable), task details drawer, create task form. Use Tailwind for styling. Mock data for tasks. Drawer opens from table row click. Form validation.",
+      "target_files": [
+        "src/pages/Tasks.jsx"
+      ],
+      "acceptance_criteria": [
+        "Page matches Stitch UI design",
+        "Table filtering works",
+        "Drawer opens/closes correctly",
+        "Form validation prevents empty submissions"
+      ],
+      "status": "TODO"
+    },
+    {
+      "id": "TASK-006",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Create Reports page (src/pages/Reports.jsx)",
+      "description": "Build Reports page. Components: report filters, charts (mock), export buttons. Use Tailwind for styling. Mock data for charts. Filters update chart data.",
+      "target_files": [
+        "src/pages/Reports.jsx"
+      ],
+      "acceptance_criteria": [
+        "Page matches Stitch UI design",
+        "Charts render without errors",
+        "Filters update chart data",
+        "Export buttons trigger download"
+      ],
+      "status": "TODO"
+    },
+    {
+      "id": "TASK-007",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Create Settings page (src/pages/Settings.jsx)",
+      "description": "Build Settings page. Components: profile section, theme toggle, notification preferences, account settings form. Use Tailwind for styling. Theme toggle persists to localStorage. Form validation.",
+      "target_files": [
+        "src/pages/Settings.jsx"
+      ],
+      "acceptance_criteria": [
+        "Page matches Stitch UI design",
+        "Theme toggle works and persists",
+        "Form validation prevents invalid submissions",
+        "Profile section displays mock data"
+      ],
+      "status": "TODO"
+    },
+    {
+      "id": "TASK-008",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Create reusable UI components (src/components/)",
+      "description": "Build reusable components: Card, Table, Modal, Drawer, Button, Input, Select, DatePicker. Use Tailwind for styling. Ensure accessibility (keyboard nav, ARIA labels). Prop types for validation.",
+      "target_files": [
+        "src/components/Card.jsx",
+        "src/components/Table.jsx",
+        "src/components/Modal.jsx",
+        "src/components/Drawer.jsx",
+        "src/components/Button.jsx",
+        "src/components/Input.jsx",
+        "src/components/Select.jsx",
+        "src/components/DatePicker.jsx"
+      ],
+      "acceptance_criteria": [
+        "Components render without errors",
+        "Accessibility attributes present",
+        "Prop types validate correctly",
+        "Styling matches Stitch UI"
+      ],
+      "status": "TODO"
+    },
+    {
+      "id": "TASK-009",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Create auth context (src/context/AuthContext.jsx)",
+      "description": "Build auth context. State: user, token, loading, error. Methods: login, logout, checkAuth. JWT stored in httpOnly cookie. Context provider wraps app. Error handling for API calls.",
+      "target_files": [
+        "src/context/AuthContext.jsx",
+        "src/api/auth.js"
+      ],
+      "acceptance_criteria": [
+        "Context provides user/token state",
+        "Login/logout methods work",
+        "Auth check runs on app load",
+        "Errors display correctly"
+      ],
+      "status": "TODO"
+    },
+    {
+      "id": "TASK-010",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Create theme context (src/context/ThemeContext.jsx)",
+      "description": "Build theme context. State: darkMode. Method: toggleTheme. Persists to localStorage. Context provider wraps app. Tailwind class toggle on root element.",
+      "target_files": [
+        "src/context/ThemeContext.jsx"
+      ],
+      "acceptance_criteria": [
+        "Context provides darkMode state",
+        "Toggle method works",
+        "Preference persists across reloads",
+        "Tailwind dark classes apply"
+      ],
+      "status": "TODO"
+    },
+    {
+      "id": "TASK-011",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Create API service (src/api/index.js)",
+      "description": "Build fetch wrapper. Handles: auth headers, error responses, loading state. Methods: GET, POST, PUT, DELETE. Base URL from env. Error handling for 401/403 (redirect to login).",
+      "target_files": [
+        "src/api/index.js"
+      ],
+      "acceptance_criteria": [
+        "API calls work without errors",
+        "Auth headers included",
+        "Error responses handled",
+        "401/403 redirect to login"
+      ],
+      "status": "TODO"
+    },
+    {
+      "id": "TASK-012",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "Create routing (src/routes/index.jsx)",
+      "description": "Set up React Router. Routes: Home, Dashboard, Projects, Tasks, Reports, Settings, Login. Protected routes (redirect if unauthenticated). Layout component for shared UI (header, sidebar).",
+      "target_files": [
+        "src/routes/index.jsx",
+        "src/layouts/MainLayout.jsx"
+      ],
+      "acceptance_criteria": [
+        "All routes render correct pages",
+        "Protected routes redirect when unauthenticated",
+        "Layout components render on all pages",
+        "Navigation works without errors"
+      ],
+      "status": "TODO"
+    },
+    {
+      "id": "TASK-013",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "App shell and navigation wiring (src/App.jsx)",
+      "description": "Wire up app shell. Import: auth context, theme context, router. Wrap app with providers. Set up global error boundary. Include global styles (Tailwind). Ensure all pages/components importable.",
+      "target_files": [
+        "src/App.jsx"
+      ],
+      "acceptance_criteria": [
+        "App renders without errors",
+        "All providers initialized",
+        "Global styles apply",
+        "Navigation between pages works"
+      ],
+      "status": "TODO"
+    }
+  ],
+  "status": "IN_PROGRESS",
+  "updated_at": "2026-08-20 02:02:27"
+}
