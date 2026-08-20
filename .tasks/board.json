@@ -22,7 +22,7 @@
         "Components reusable across app",
         "Tailwind classes match design system (orange theme)"
       ],
-      "status": "TODO"
+      "status": "DONE"
     },
     {
       "id": "TASK-002",
@@ -44,7 +44,7 @@
         "Activity feed scrollable",
         "Responsive layout (sidebar collapse on mobile)"
       ],
-      "status": "TODO"
+      "status": "DONE"
     },
     {
       "id": "TASK-003",
@@ -64,7 +64,7 @@
         "MainContent container padding consistent",
         "Components work in both pages"
       ],
-      "status": "TODO"
+      "status": "DONE"
     },
     {
       "id": "TASK-004",
@@ -83,7 +83,7 @@
         "Typography (font family, weights, sizes) match design",
         "Tokens reusable across components"
       ],
-      "status": "TODO"
+      "status": "DONE"
     },
     {
       "id": "TASK-005",
@@ -102,7 +102,7 @@
         "404 page render for unknown routes",
         "App shell responsive (mobile/desktop)"
       ],
-      "status": "TODO"
+      "status": "DONE"
     }
   ],
   "status": "IN_PROGRESS",
