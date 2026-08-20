@@ -1,26 +1,28 @@
 {
   "project_name": "svralabs-devos-engineering",
-  "architecture_summary": "Modular React app. Pages in src/pages/. Shared components in src/components/. Tailwind CSS for styling. React Router v6 for navigation. No state manager (useContext + useReducer for global state).",
+  "architecture_summary": "Modular React app. Pages in src/pages/. Shared components in src/components/. Tailwind CSS for styling. React Router for navigation. No state management library (use React context for global state if needed).",
   "tickets": [
     {
       "id": "TASK-001",
       "role": "frontend",
       "model": "hermes-auto",
-      "title": "Build DevOS table components reference page",
+      "title": "Create Table Components Reference page",
       "source_screen": "devos_table_components_reference",
-      "description": "Convert Stitch screen to React. Extract reusable table components (DataTable, SortableHeader, PaginationControls). Style match exact. Responsive.",
+      "description": "Convert Stitch screen `devos_table_components_reference` to React component. Extract reusable table components (Table, TableHeader, TableRow, TableCell, TableFooter). Style match exact. Use Tailwind CSS. Ensure responsive.",
       "target_files": [
-        "src/pages/DevOSTableComponentsReference.jsx",
-        "src/components/DataTable.jsx",
-        "src/components/SortableHeader.jsx",
-        "src/components/PaginationControls.jsx"
+        "src/pages/TableComponentsReference.jsx",
+        "src/components/Table.jsx",
+        "src/components/TableHeader.jsx",
+        "src/components/TableRow.jsx",
+        "src/components/TableCell.jsx",
+        "src/components/TableFooter.jsx"
       ],
       "acceptance_criteria": [
-        "Page render pixel-perfect vs Stitch design",
-        "Table columns sortable (click header)",
-        "Pagination controls functional (prev/next/page numbers)",
+        "Page render match Stitch design pixel-perfect",
         "Components reusable across app",
-        "Tailwind classes match design system (orange theme)"
+        "Responsive breakpoints match design spec",
+        "No hardcoded data (mock data in separate file)",
+        "Accessibility attributes (aria-labels, roles) present"
       ],
       "status": "DONE"
     },
@@ -28,21 +30,21 @@
       "id": "TASK-002",
       "role": "frontend",
       "model": "hermes-auto",
-      "title": "Build DevOS engineering dashboard page",
+      "title": "Create Engineering Dashboard page",
       "source_screen": "devos_engineering_dashboard",
-      "description": "Convert Stitch dashboard to React. Extract reusable widgets (SummaryCard, ProgressBar, ActivityFeed). Style match exact. Data mocks for now.",
+      "description": "Convert Stitch screen `devos_engineering_dashboard` to React component. Extract reusable dashboard widgets (StatsCard, ProgressChart, ActivityFeed). Style match exact. Use Tailwind CSS. Ensure responsive.",
       "target_files": [
-        "src/pages/DevOSEngineeringDashboard.jsx",
-        "src/components/SummaryCard.jsx",
-        "src/components/ProgressBar.jsx",
+        "src/pages/EngineeringDashboard.jsx",
+        "src/components/StatsCard.jsx",
+        "src/components/ProgressChart.jsx",
         "src/components/ActivityFeed.jsx"
       ],
       "acceptance_criteria": [
-        "Page render pixel-perfect vs Stitch design",
-        "Summary cards display mock data",
-        "Progress bars animate on load",
-        "Activity feed scrollable",
-        "Responsive layout (sidebar collapse on mobile)"
+        "Page render match Stitch design pixel-perfect",
+        "Components reusable across app",
+        "Responsive breakpoints match design spec",
+        "Mock API data fetch (use fetch + local JSON)",
+        "Accessibility attributes (aria-labels, roles) present"
       ],
       "status": "DONE"
     },
@@ -50,19 +52,21 @@
       "id": "TASK-003",
       "role": "frontend",
       "model": "hermes-auto",
-      "title": "Create shared layout components",
+      "title": "Create shared UI components library",
       "source_screen": "",
-      "description": "Build layout primitives (Header, Sidebar, MainContent). Extract common patterns from both screens. Style consistent with orange theme.",
+      "description": "Extract common UI elements from both screens (buttons, badges, cards, typography). Create shared components. Style match design system. Use Tailwind CSS. Ensure consistency.",
       "target_files": [
-        "src/components/Header.jsx",
-        "src/components/Sidebar.jsx",
-        "src/components/MainContent.jsx"
+        "src/components/Button.jsx",
+        "src/components/Badge.jsx",
+        "src/components/Card.jsx",
+        "src/components/Typography.jsx"
       ],
       "acceptance_criteria": [
-        "Header include logo + user dropdown",
-        "Sidebar navigation links active state",
-        "MainContent container padding consistent",
-        "Components work in both pages"
+        "Components match design system spec",
+        "Reusable across all pages",
+        "Variants (primary, secondary, etc.) supported",
+        "Accessibility attributes present",
+        "Documented props in JSDoc"
       ],
       "status": "DONE"
     },
@@ -70,41 +74,64 @@
       "id": "TASK-004",
       "role": "frontend",
       "model": "hermes-auto",
-      "title": "Implement design system tokens",
+      "title": "Create mock data service layer",
       "source_screen": "",
-      "description": "Extract color, spacing, typography tokens from Stitch screens. Create Tailwind config + CSS variables. Apply globally.",
+      "description": "Create mock data service for dashboard and table components. Use local JSON files. Implement fetch wrapper for consistent API calls. Support loading/error states.",
       "target_files": [
-        "tailwind.config.js",
-        "src/styles/tokens.css"
+        "src/services/mockData.js",
+        "src/services/api.js",
+        "src/data/dashboard.json",
+        "src/data/tableComponents.json"
       ],
       "acceptance_criteria": [
-        "All colors match Stitch orange theme",
-        "Spacing scale consistent (4px increments)",
-        "Typography (font family, weights, sizes) match design",
-        "Tokens reusable across components"
+        "Mock data match Stitch design content",
+        "API wrapper handle loading/error states",
+        "Data structure consistent across components",
+        "Easy to replace with real API later"
       ],
-      "status": "DONE"
+      "status": "TODO"
     },
     {
       "id": "TASK-005",
       "role": "frontend",
       "model": "hermes-auto",
-      "title": "App shell, navigation bar, and router wiring (src/App.jsx)",
+      "title": "Implement responsive layout system",
       "source_screen": "",
-      "description": "Set up React Router. Create app shell with Header, Sidebar, MainContent. Route to both pages. 404 fallback.",
+      "description": "Create responsive layout system using Tailwind CSS. Define breakpoints match design spec. Ensure all components adapt to screen size. Test on mobile/tablet/desktop.",
       "target_files": [
-        "src/App.jsx",
-        "src/main.jsx"
+        "tailwind.config.js",
+        "src/styles/globals.css"
       ],
       "acceptance_criteria": [
-        "Navigation links work (no full page reload)",
-        "Active route highlighted in sidebar",
-        "404 page render for unknown routes",
-        "App shell responsive (mobile/desktop)"
+        "Breakpoints match design spec",
+        "All components responsive",
+        "No horizontal scroll on mobile",
+        "Touch targets large enough on mobile"
       ],
-      "status": "DONE"
+      "status": "TODO"
+    },
+    {
+      "id": "TASK-006",
+      "role": "frontend",
+      "model": "hermes-auto",
+      "title": "App shell, navigation bar, and router wiring (src/App.jsx)",
+      "source_screen": "",
+      "description": "Create app shell. Implement navigation bar. Set up React Router. Configure routes for TableComponentsReference and EngineeringDashboard pages. Ensure 404 handling.",
+      "target_files": [
+        "src/App.jsx",
+        "src/components/Navbar.jsx",
+        "src/pages/NotFound.jsx"
+      ],
+      "acceptance_criteria": [
+        "Navigation bar match design",
+        "Routes work for all pages",
+        "404 page render for unknown routes",
+        "Active route highlighted in navbar",
+        "Responsive navigation (mobile menu if needed)"
+      ],
+      "status": "TODO"
     }
   ],
   "status": "IN_PROGRESS",
-  "updated_at": "2026-08-20 20:55:57"
+  "updated_at": "2026-08-20 21:03:33"
 }
